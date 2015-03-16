@@ -1,5 +1,6 @@
 # ----------------------------------------------------------------------------
 # STEPS:
+# http://jenisys.github.io/behave.example/tutorials/tutorial03.html
 # ----------------------------------------------------------------------------
 from behave   import given, when, then
 from hamcrest import assert_that, equal_to, is_not
@@ -8,10 +9,6 @@ from behave_tutorial.classes.NinjaFight import NinjaFight
 @given('the ninja has a {achievement_level}')
 def step_the_ninja_has_a(context, achievement_level):
     context.ninja_fight = NinjaFight(achievement_level)
-#@given('the ninja has a third level black-belt')
-#def step_the_ninja_has_a(context):
-#    achievement_level = 'third level black-belt'
-#    context.ninja_fight = NinjaFight(achievement_level)
 
 @when('attacked by a {opponent_role}')
 def step_attacked_by_a(context, opponent_role):
