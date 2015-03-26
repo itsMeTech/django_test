@@ -18,6 +18,10 @@ def step_attacked_by_a(context, opponent_role):
 def step_attacked_by(context, opponent):
     context.ninja_fight.opponent = opponent
 
+@when('not attacked')
+def step_attacked_by(context):
+    context.ninja_fight.opponent = None
+
 @then('the ninja should {reaction}')
 def step_the_ninja_should(context, reaction):
     assert_that(reaction, equal_to(context.ninja_fight.decision()))
